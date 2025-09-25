@@ -1,0 +1,87 @@
+# "/home/ubuntu7/m15kh/vllm/input/1.MP4_images/1.MP4_207.jpg"
+# input: "/home/ubuntu7/m15kh/vllm/input/1.MP4_images/1.MP4_207.jpg" 
+# input: "/home/ubuntu7/m15kh/vllm/input/me_v.mp4" #"/home/ubuntu7/m15kh/vllm/Qwen2.5_VL/me/me2_.jpg" #/home/ubuntu7/m15kh/vllm/input/me_v.mp4
+# input: "/home/ubuntu7/m15kh/vllm/Qwen_Inference/websocket/frames_2/frame_30_No Human Detected..jpg"
+# input: "/home/ubuntu7/m15kh/vllm/input/me_v.mp4"
+input: "/home/ubuntu7/m15kh/vllm/frame_3.png"
+input_video: "/home/ubuntu7/m15kh/vllm/Qwen2.5_VL/fixed_1.mp4" #"/home/ubuntu7/m15kh/vllm/Qwen2.5_VL/input/video_1.mp4"
+
+
+#/home/ubuntu7/m15kh/vllm/input/1.MP4_images/1.MP4_207.jpg
+prompt: |
+  You are a robot receiving a live webcam video stream.
+  Detect the position of any human or any object similar to a human in the current frame.
+  Divide the frame into three equal vertical sections: left, center, right.
+  If the human is in the center section, JUST ANSWER: "Move_Forward".
+  If the human is in the left section, JUST ANSWER: "Turn_Left".
+  If the human is in the right section, JUST ANSWER: "Turn_Right".
+  If no human is detected, JUST ANSWER: "human_not_detected".
+
+
+server_host: "0.0.0.0" 
+server_port: 20807  
+
+
+
+
+# You are a robot receiving a live webcam video stream.
+# Detect the position of any human in the current frame.
+# Divide the frame into three equal vertical sections: left, center, right.
+# If the human is in the center section, output: "Move Forward".
+# If the human is in the left section, output: "Turn left".
+# If the human is in the right section, output: "Turn Right".
+# If no human is detected, output: "No Human Detected".
+
+  # You are a robot receiving a live webcam video stream.
+  # Detect any humans in the current frame.
+  # For each detected human, return the output in this format:
+
+  # { "bbox_2d": [x1, y1, x2, y2], "label": "human"}
+  # If no human is detected, return human_not_detected
+  # Do not return any other objects or instructions.
+  
+
+
+
+
+
+# Detect humans only in the image or video.  
+# For each detected human, return {"bbox_2d": [x1, y1, x2, y2], "label": "human"}.  
+# If no humans are detected, return an empty list.  
+# For videos, also specify the timestamps when humans appear.
+
+# Example for a video:
+# [
+#   {"bbox_2d": [120, 60, 210, 310], "label": "human"},
+#   {"bbox_2d": [130, 70, 220, 320], "label": "human"}
+# ]
+# If no humans are detected, return an empty list.
+
+
+# You are a robot receiving a live webcam video stream.
+# Detect the position of any human in the current frame.
+# Divide the frame into three equal vertical sections: left, center, right.
+# If the human is in the center section, output: "Move Forward".
+# If the human is in the left section, output: "Turn Left".
+# If the human is in the right section, output: "Turn Right".
+# If no human is detected, output: "No Human Detected".
+
+#video
+# You are a robot receiving a live webcam video stream.
+# Detect the position of any human in the current frame.
+# Divide the frame into three equal vertical sections: left, center, right.
+# If the human is in the center section, output: "Move Forward".
+# If the human is in the left section, output: "Turn Left".
+# If the human is in the right section, output: "Turn Right".
+# If no human is detected, output: "No Human Detected".
+
+
+# image 
+# You are a robot.
+# Divide the frame into three equal vertical sections: (left, center, right).
+# Detect the position of any human in the current frame (left, center, right).
+# If the human is in the center section, output: "Move Forward".
+# If the human is in the left section, output: "Turn Left".
+# If the human is in the right section, output: "Turn Right".
+# If no human is detected, output: "No Human Detected".
+# you MUST send the position of the detected human as coordinates: x1, y1, x2, y2.

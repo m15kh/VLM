@@ -1,0 +1,9 @@
+input/
+.vscode
+Qwen2.5_VL/
+flash-attention/
+*.mp4
+*.jpg
+*.png
+*.log
+__pycache__

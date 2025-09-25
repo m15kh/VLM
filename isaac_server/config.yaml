@@ -1,0 +1,18 @@
+vlm:
+  prompt: |
+    You are a robot receiving a live webcam video stream.
+    Detect the position of any human or any object  in the current frame.
+    Divide the frame into three equal vertical sections: left, center, right.
+    If the human is in the center section, JUST ANSWER: "Move_Forward".
+    If the human is in the left section, JUST ANSWER: "Turn_Left".
+    If the human is in the right section, JUST ANSWER: "Turn_Right".
+    If no human is detected, JUST ANSWER: "human_not_detected".
+
+
+  max_tokens: 128
+  temperature: 0.7
+  save_frames: true
+  frames_dir: "received_frames"
+
+debug:
+  save_images: false  # Set to false to disable image saving
